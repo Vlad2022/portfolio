@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <title>Contact | Portfolio</title>
+
+      <!-- stylesheet -->
+      <link rel="stylesheet" href="../styles/contact.css">
+      <link rel="stylesheet" href="../styles/animate.css">
+
+      <!-- bootstrap cdns -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      
+
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+      <!-- for on scroll animations -->
+      <link rel="stylesheet" href="/styles/animate.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+      
+
+</head>
+<body>
+
+            <!--------------- navbar starts here --------------->
+            <div class="toggle-btn">
+                  <span class="one"></span>
+                  <span class="two"></span>
+             </div>
+        
+             <div class="navigation">
+                  <div class="data">
+                       <ul>
+                            <li>Меню</li>
+                            <li><a href="../index.html">Головна</a></li>
+                            <li><a href="about.html">Про мене</a></li>
+                            <li><a href="project.html">Проекти</a></li>
+                            <li><a href="contact.html">Контакти</a></li>
+                       </ul>
+                  </div>
+             </div>
+            <!--------------- navbar ends here --------------->
+
+            <div class="whitespace"></div>
+
+            <!--------------- hero section starts here say hello 👋 --------------->
+            <div class="container">
+                  <div class="hero-content">
+                        <br><br>
+
+                        <div class="row">
+                              <div class="col-lg-8">
+
+                                    <h3 class="wow fadeInUp" data-wow-delay="1s">скажіть привіт 👋</h3><br>
+                                    <p class="wow fadeInUp" data-wow-delay="1.2s">На цій сторінці ви можете залишити своє повідомлення для мене, я постараюся прочитати його максимально швидко.</p>
+
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="media">
+                  <ul>
+                        <li><a href="https://facebook.com" target="_blank">facebook</a></li>
+                        <li><a href="https://instagram.com" target="_blank">instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank">twitter</a></li>
+                  </ul>
+            </div>
+           
+            <!--------------- form section starts here --------------->
+            <div class="container-fluid">
+                  <div class="row">
+                        <div class="col-lg-8">
+                              <form name="contact-form" id="contact-form" method="post" action="">
+
+                              <ul>
+
+                              <li class="wow fadeInUp" data-wow-delay="1.4s">
+                                    <label for="contact-name">name :</label>
+                                    <div class="textarea">
+                                          <input type="text" name="contact-name" id="contact-name" value="" required>
+                                    </div>
+                              </li>
+
+                              <li class="wow fadeInUp" data-wow-delay="1.6s">
+                                    <label for="contact-email">e-mail :</label>
+                                    <div class="textarea">
+                                          <input type="email" name="contact-email" id="contact-email" value="" required>
+                                    </div>
+                              </li>
+
+                              <li class="wow fadeInUp" data-wow-delay="1.6s">
+                                    <label for="contact-project">message :</label>
+                                    <div class="textarea">
+                                          <textarea type="email" name="contact-project" id="contact-project" rows="1" value="" required>
+                                          </textarea>
+                                    </div>
+                              </li>
+
+                              </ul>
+
+                              <button type="submit" name="contact-submit" id="contact-submit" class="send wow fadeInUp">Надіслати</button>
+
+                              </form>
+                        </div>
+                  </div>
+            </div>
+
+           
+
+      </div>
+
+      <!-- greensock cdn -->
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+      <script src="../js/wow.min.js"></script>
+
+      <script type="text/javascript">
+
+      // navigation starts here
+      $("#toggle").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $("#resize ul li a").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $(".close-btn").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      // navigation ends here
+
+      // nav animation
+
+      var t1 = new TimelineMax({paused: true});
+
+t1.to(".one", 0.8, {
+     y: 6,
+     rotation: 45,
+     ease: Expo.easeInOut
+});
+t1.to(".two", 0.8, {
+     y: -6,
+     rotation: -45,
+     ease: Expo.easeInOut,
+     delay: -0.8
+});
+
+t1.to(".navigation", 2, {
+     top: "0%",
+     ease: Expo.easeInOut,
+     delay: -2
+});
+
+t1.staggerFrom(".navigation ul li", 2, {x: -200, opacity: 0, ease:Expo.easeOut}, 0.3);
+
+t1.reverse();
+$(document).on("click", ".toggle-btn", function() {
+     t1.reversed(!t1.reversed());
+});
+$(document).on("click", "a", function() {
+     t1.reversed(!t1.reversed());
+});
+
+      </script>
+</body>
+</html>
